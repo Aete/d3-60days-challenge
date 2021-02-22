@@ -38,7 +38,7 @@ export default function ScatterChart(element) {
 
   const xAxisTitle = container
     .append('text')
-    .text('GDP')
+    .text('GDP per capita')
     .attr('text-anchor', 'middle')
     .attr('x', width)
     .attr('y', height + 35)
