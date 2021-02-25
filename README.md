@@ -2,14 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Day One: Bar Chart
+## Day 1: Bar Chart Bar chart with COVID-19 data in South Korea
 
-- Bar chart with COVID-19 data in South Korea
+## Day 2: Stacked Bar chart with COVID-19 data in South Korea
 
-## Day Two: Stacked Bar Chart
+## Day 3: Stacked Area Chart with number of employments in Seoul by industries
 
-- Stacked Bar chart with COVID-19 data in South Korea
+## Day 4: Scatter plot with GDP and Life Expectancy datasets
 
-## Day Three: Stacked Area Chart
+## Day 5: Gapminder Clone
 
-- Stacked Area Chart with number of employments in Seoul by industries
+## Day 6: Line Charts with COVID-19 data in South Korea
+
+## Day 7: Panning and Zooming (Gapminder Clone)
+
+## Day 8: Pie Chart with COVID-19 data in South Korea
