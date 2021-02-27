@@ -8,19 +8,12 @@ import DaySix from './Day6/DaySix';
 import DaySeven from './Day7/DaySeven';
 import DayEight from './Day8/DayEight';
 import DayNine from './Day9/DayNine';
+import DayTen from './Day10/DayTen';
 
 function App() {
   return (
     <div className="App">
-      <DayOne />
-      <DayTwo />
-      <DayThree />
-      <DayFour />
-      <DayFive />
-      <DaySix />
-      <DaySeven />
-      <DayEight />
-      <DayNine />
+      <DayTen />
     </div>
   );
 }
