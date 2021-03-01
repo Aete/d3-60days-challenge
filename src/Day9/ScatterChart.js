@@ -13,14 +13,9 @@ export default function ScatterChart(element) {
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
 
-  const container = svg
-    .append('g')
-    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  const container = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-  const xAxis = container
-    .append('g')
-    .attr('class', 'xAxis')
-    .attr('transform', `translate(0,${height})`);
+  const xAxis = container.append('g').attr('class', 'xAxis').attr('transform', `translate(0,${height})`);
 
   const yAxis = container.append('g').attr('class', 'yAxis');
 
@@ -56,16 +51,9 @@ export default function ScatterChart(element) {
     .style('font-weight', 700)
     .style('font-size', '12px');
 
-  const dashboard = container
-    .append('g')
-    .attr('transform', `translate(${width - 200},${height - 50})`);
+  const dashboard = container.append('g').attr('transform', `translate(${width - 200},${height - 50})`);
 
-  const avgGDP = dashboard
-    .append('text')
-    .text('Avg. GDP: ')
-    .style('font-family', 'sans-serif')
-    .style('font-weight', 700)
-    .style('font-size', '12px');
+  const avgGDP = dashboard.append('text').text('Avg. GDP: ').style('font-family', 'sans-serif').style('font-weight', 700).style('font-size', '12px');
 
   const avgLife = dashboard
     .append('text')
@@ -131,13 +119,7 @@ export default function ScatterChart(element) {
         const [[x0, y0], [x1, y1]] = selection;
         values = dot
           .attr('fill', '#2196F3')
-          .filter(
-            (d) =>
-              x0 <= xScale(d.gdp) &&
-              xScale(d.gdp) < x1 &&
-              y0 <= yScale(d.lifeExp) &&
-              yScale(d.lifeExp) < y1
-          )
+          .filter((d) => x0 <= xScale(d.gdp) && xScale(d.gdp) < x1 && y0 <= yScale(d.lifeExp) && yScale(d.lifeExp) < y1)
           .attr('fill', '#f44336')
           .data();
       } else {
@@ -154,9 +136,7 @@ export default function ScatterChart(element) {
         );
 
         avgGDP.text(`Avg. GDP: ${Math.floor(gdp / values.length)}`);
-        avgLife.text(
-          `Avg. Life Expectancy: ${Math.floor(life / values.length)}`
-        );
+        avgLife.text(`Avg. Life Expectancy: ${Math.floor(life / values.length)}`);
       }
     }
   });

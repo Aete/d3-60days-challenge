@@ -9,11 +9,12 @@ import DaySeven from './Day7/DaySeven';
 import DayEight from './Day8/DayEight';
 import DayNine from './Day9/DayNine';
 import DayTen from './Day10/DayTen';
+import DayEleven from './Day11/DayEleven';
 
 function App() {
   return (
     <div className="App">
-      <DayTen />
+      <DayEleven />
     </div>
   );
 }
