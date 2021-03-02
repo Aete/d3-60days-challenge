@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import csvData from '../utils/data/gapminder.csv';
 
 export default function ScatterChartOne(element, countryFilter) {
-  const margin = { top: 20, bottom: 50, right: 50, left: 100 };
+  const margin = { top: 50, bottom: 50, right: 50, left: 100 };
   const height = 300 - margin.top - margin.bottom;
   const width = 500 - margin.left - margin.right;
 
