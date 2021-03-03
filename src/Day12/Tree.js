@@ -82,8 +82,6 @@ export default function Tree(element) {
       if (d.x < x0) x0 = d.x;
     });
 
-    console.log(root.links());
-
     const link = container
       .append('g')
       .attr('fill', 'none')

@@ -25,3 +25,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Day 11: Brushing multiple charts (Scatter plot with GDP, Population and Life Expectancy datasets)
 
 - Day 12: Tree + Bar chart with GDP dataset
+
+- Day 13 & 14: Clustering
