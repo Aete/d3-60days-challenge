@@ -48,7 +48,7 @@ export default function ClusterScatter(element) {
   });
 
   this.update = () => {
-    const node = container
+    this.node = container
       .append('g')
       .attr('class', 'nodes')
       .selectAll('circle')
@@ -57,9 +57,13 @@ export default function ClusterScatter(element) {
       .append('circle')
       .attr('r', (d) => rScale(d.gdp_cap))
       .attr('fill', (d) => colors(d.continent));
+    
+    const duration = 20000;
+    const force = d3.force().nodes(data).size([width, height]).on('tick',tick).start();
 
-    simulation.nodes(data, (d) => d.country).on('tick', this.ticked);
+    function tick(e){
+      const k = 6 * e.alpha;
+      data.forEach(function ())
+    }
   };
 
-  this.ticked = () => {};
-}
