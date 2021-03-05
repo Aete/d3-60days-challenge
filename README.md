@@ -27,3 +27,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Day 12: Tree + Bar chart with GDP dataset
 
 - Day 13 & 14: Clustering (Still thinking about awesome way to make 5 different clusters of bubbles)
+
+- Day 15: 다음날 코딩테스트 준비 관계로 휴무
