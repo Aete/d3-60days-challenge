@@ -74,7 +74,9 @@ export default function ClusterScatter(element) {
       .append('circle')
       .attr('r', (d) => rScale(d.gdp_cap))
       .attr('fill', (d) => colors[d.continent])
-      .attr('cx', (d) => xCenter[d.continent]);
+      .attr('cx', (d) => xCenter[d.continent])
+      .attr('cy', height / 2)
+      .attr('fill-opacity', 0.1);
 
     const simulation = d3
       .forceSimulation(data)
@@ -89,14 +91,18 @@ export default function ClusterScatter(element) {
         'collision',
         d3.forceCollide().radius((d) => rScale(d.gdp_cap))
       )
-      .on('tick', tick);
+      .on('end', tick);
 
-    function tick(e) {
-      nodes
+    function tick() {
+      container
+        .selectAll('circle')
+        .transition()
+        .duration(500)
         .attr('cx', (d) => {
           return d.x;
         })
-        .attr('cy', (d) => d.y + height / 2);
+        .attr('cy', (d) => d.y + height / 2)
+        .attr('fill-opacity', 0.8);
     }
   };
 }
