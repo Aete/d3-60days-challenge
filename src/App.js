@@ -13,6 +13,7 @@ import DayEleven from './Day11/DayEleven';
 import DayTwelve from './Day12/DayTwelve';
 import DayThirteen from './Day13/DayThirteen';
 import DayFourTeen from './Day14/DayFourteen';
+import DayFifteen from './Day15/DayFifteen';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <DayTwelve />
       <DayThirteen />
       <DayFourTeen />
+      <DayFifteen />
     </div>
   );
 }
