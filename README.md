@@ -29,3 +29,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Day 13: Clustering
 
 - Day 14: Clustering with animation
+
+- Day 15: Radial Tree + Bar chart with GDP dataset
