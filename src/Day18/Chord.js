@@ -84,7 +84,6 @@ ${d3.format('.1~%')(d.value)}`
     .attr('d', ribbon)
     .attr('fill-opacity', 0.5)
     .on('mousemove', function (event, d) {
-      console.log(d);
       d3.select(this).attr('fill-opacity', 0.8);
       tooltip
         .attr('x', event.layerX + 20)
