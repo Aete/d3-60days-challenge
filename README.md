@@ -35,3 +35,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Day 16: Histogram with GDP data in 2019
 
 - Day 17: Circle Packing diagram with GDP data in 2019
+
+- Day 18: Chord Diagram (Copy from https://observablehq.com/@d3/chord-diagram)
