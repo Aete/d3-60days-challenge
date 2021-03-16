@@ -60,7 +60,12 @@ export default function ClusterScatter(element) {
     .style('font-weight', 700);
 
   d3.csv(csvData).then((csv) => {
-    data = csv.filter((d) => +d.year === 2019);
+    data = csv
+      .filter((d) => +d.year === 2019)
+      .map((d) => {
+        d.x = xCenter[d.continent];
+        return d;
+      });
     this.update();
   });
 
@@ -91,15 +96,13 @@ export default function ClusterScatter(element) {
         'collision',
         d3.forceCollide().radius((d) => rScale(d.gdp_cap))
       )
-      .on('end', tick);
+      .on('tick', tick);
 
     function tick() {
       container
         .selectAll('circle')
-        .transition()
-        .duration(500)
         .attr('cx', (d) => {
-          return d.x;
+          return d.x || xCenter[d.continent];
         })
         .attr('cy', (d) => d.y + height / 2)
         .attr('fill-opacity', 0.8);
