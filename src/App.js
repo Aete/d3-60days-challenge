@@ -18,6 +18,7 @@ import DaySixteen from './Day16/DaySixteen';
 import DaySeventeen from './Day17/DaySevenTeen';
 import DayEighteen from './Day18/DayEighteen';
 import DayNineTeen from './Day19/DayNineteen';
+import DayTwenty from './Day20/DayTwenty';
 function App() {
   return (
     <div className="App">
@@ -39,6 +40,7 @@ function App() {
       <DaySeventeen />
       <DayEighteen />
       <DayNineTeen />
+      <DayTwenty />
     </div>
   );
 }
