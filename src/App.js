@@ -22,7 +22,7 @@ import DayTwenty from './Day20/DayTwenty';
 function App() {
   return (
     <div className="App">
-      <DayOne />
+      {/* <DayOne />
       <DayTwo />
       <DayThree />
       <DayFour />
@@ -39,7 +39,7 @@ function App() {
       <DaySixteen />
       <DaySeventeen />
       <DayEighteen />
-      <DayNineTeen />
+      <DayNineTeen /> */}
       <DayTwenty />
     </div>
   );

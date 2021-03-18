@@ -63,19 +63,25 @@ export default function RadialTree(element) {
           .angle((d) => d.x)
       );
 
-    const nodes = nodeGroup
-      .selectAll('g')
-      .data(root.descendants())
-      .join('g')
-      .attr(
-        'transform',
-        (d) => `
+    const nodes = nodeGroup.selectAll('g').data(root.descendants());
+
+    nodes.exit().selectAll('g>circle').transition().duration(500).style('opacity', 0);
+    nodes.exit().selectAll('g>text').transition().duration(500).style('opacity', 0);
+    setTimeout(() => {
+      nodes.exit().remove();
+    }, 500);
+
+    const newNodes = nodes
+      .enter()
+      .append('g')
+      .attr('transform', (d) => {
+        return `
         rotate(${(d.x * 180) / Math.PI - 90})
         translate(${d.y},0)
-      `
-      );
+      `;
+      });
 
-    nodes
+    newNodes
       .append('circle')
       .attr('cx', 0)
       .attr('cy', 0)
@@ -84,12 +90,16 @@ export default function RadialTree(element) {
         if (d.data.name === 'Global') {
           return colors[d.data.name] || '#212121';
         } else {
-          console.log(d.data);
           return colors[d.data.name];
         }
+      })
+      .style('opacity', 1)
+      .on('click', (e, d) => {
+        [d.data.children, d.data.altChildren] = [d.data.altChildren, d.data.children];
+        this.update();
       });
 
-    nodes
+    newNodes
       .append('text')
       .attr('x', 5)
       .text((d) => d.data.name)
@@ -97,13 +107,28 @@ export default function RadialTree(element) {
       .style('font-size', 10)
       .attr('text-anchor', (d) => (d.x < Math.PI ? 'start' : 'end'))
       .attr('transform', (d) => (d.x >= Math.PI ? 'rotate(180)' : null));
+
+    const allNodes = nodeGroup.selectAll('g').transition().duration(500);
+
+    allNodes
+      .attr(
+        'transform',
+        (d) => `
+        rotate(${(d.x * 180) / Math.PI - 90})
+        translate(${d.y},0)
+      `
+      )
+      .style('opacity', 1);
   };
 
   function tree(data) {
     const root = d3.hierarchy(data);
+    console.log(root);
     return d3
       .tree()
       .size([2 * Math.PI, (width * 0.9) / 2])
-      .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth)(root);
+      .separation((a, b) => {
+        return (a.parent == b.parent ? 1 : 2) / a.depth;
+      })(root);
   }
 }
