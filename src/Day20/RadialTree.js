@@ -63,7 +63,7 @@ export default function RadialTree(element) {
           .angle((d) => d.x)
       );
 
-    const nodes = nodeGroup.selectAll('g').data(root.descendants());
+    const nodes = nodeGroup.selectAll('g').data(root.descendants(), (d) => d.data.name);
 
     nodes.exit().selectAll('g>circle').transition().duration(500).style('opacity', 0);
     nodes.exit().selectAll('g>text').transition().duration(500).style('opacity', 0);
@@ -90,7 +90,7 @@ export default function RadialTree(element) {
         if (d.data.name === 'Global') {
           return colors[d.data.name] || '#212121';
         } else {
-          return colors[d.data.name];
+          return colors[d.data.name] || colors[d.parent.data.name];
         }
       })
       .style('opacity', 1)
@@ -101,14 +101,15 @@ export default function RadialTree(element) {
 
     newNodes
       .append('text')
-      .attr('x', 5)
+      .attr('x', (d) => (d.x < Math.PI ? 10 : -10))
+      .attr('y', 3)
       .text((d) => d.data.name)
       .style('font-family', 'sans-serif')
       .style('font-size', 10)
       .attr('text-anchor', (d) => (d.x < Math.PI ? 'start' : 'end'))
       .attr('transform', (d) => (d.x >= Math.PI ? 'rotate(180)' : null));
 
-    const allNodes = nodeGroup.selectAll('g').transition().duration(500);
+    const allNodes = nodeGroup.selectAll('g').transition().duration(1000);
 
     allNodes
       .attr(
@@ -123,12 +124,14 @@ export default function RadialTree(element) {
 
   function tree(data) {
     const root = d3.hierarchy(data);
-    console.log(root);
     return d3
       .tree()
       .size([2 * Math.PI, (width * 0.9) / 2])
       .separation((a, b) => {
-        return (a.parent == b.parent ? 1 : 2) / a.depth;
+        if (a.parent.data.name === 'Global') {
+          return (a.parent.data.name === b.parent.data.name ? 1 : 2) / a.depth;
+        }
+        return ((a.parent.data.name === b.parent.data.name ? 1 : 2) * 2 * Math.PI) / 63;
       })(root);
   }
 }

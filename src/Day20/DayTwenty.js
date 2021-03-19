@@ -21,7 +21,7 @@ export default function DayTwenty() {
           marginBottom: '40px',
         }}
       >
-        Radial Tree (GDP per capita)
+        Radial Collapsible Tree (Click Circles!)
       </h1>
       <div ref={container}></div>
     </Fragment>
