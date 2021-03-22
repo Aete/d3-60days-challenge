@@ -1,7 +1,11 @@
 import { Fragment, useEffect, useRef } from 'react';
+import parallel from './parallel';
 
 export default function DayTwentyOne() {
   const container = useRef();
+  useEffect(() => {
+    parallel(container.current);
+  }, []);
 
   return (
     <Fragment>
@@ -13,7 +17,7 @@ export default function DayTwentyOne() {
           marginBottom: '40px',
         }}
       >
-        Radial Collapsible Tree (Click Circles!)
+        Parallel Coordinates Chart
       </h1>
       <div ref={container}></div>
     </Fragment>

@@ -83,6 +83,9 @@ export default function Main() {
       <StyledLink to="/day20">
         <Square title={'Day 20'} />
       </StyledLink>
+      <StyledLink to="/day21">
+        <Square title={'Day 21'} />
+      </StyledLink>
     </StyledMain>
   );
 }
