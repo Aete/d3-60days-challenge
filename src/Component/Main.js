@@ -6,6 +6,16 @@ import imageDayTwo from '../utils/images/DayTwo.png';
 import imageDayThree from '../utils/images/DayThree.png';
 import imageDayFour from '../utils/images/DayFour.png';
 import imageDayFive from '../utils/images/DayFive.png';
+import imageDaySix from '../utils/images/DaySix.png';
+import imageDaySeven from '../utils/images/DayFive.png';
+import imageDayEight from '../utils/images/DayEight.png';
+import imageDayNine from '../utils/images/DayFour.png';
+import imageDayTen from '../utils/images/DayFive.png';
+import imageDayEleven from '../utils/images/DayEleven.png';
+import imageDayTwelve from '../utils/images/DayTwelve.png';
+import imageDayThirteen from '../utils/images/DayThirteen.png';
+import imageDayFourteen from '../utils/images/DayThirteen.png';
+import imageDayFifteen from '../utils/images/DayFifteen.png';
 
 const StyledMain = styled.main`
   width: 885px;
@@ -24,67 +34,67 @@ export default function Main() {
   return (
     <StyledMain>
       <StyledLink to="/day1">
-        <Square title={'Day 1'} img_src={imageDayOne} />
+        <Square title={'Bar chart'} date={'Day 1'} img_src={imageDayOne} />
       </StyledLink>
       <StyledLink to="/day2">
-        <Square title={'Day 2'} img_src={imageDayTwo} />
+        <Square title={'Stacked Bar chart'} date={'Day 2'} img_src={imageDayTwo} />
       </StyledLink>
       <StyledLink to="/day3">
-        <Square title={'Day 3'} img_src={imageDayThree} />
+        <Square title={'Stacked Area chart'} date={'Day 3'} img_src={imageDayThree} />
       </StyledLink>
       <StyledLink to="/day4">
-        <Square title={'Day 4'} img_src={imageDayFour} />
+        <Square title={'Scatterplot'} date={'Day 4'} img_src={imageDayFour} />
       </StyledLink>
       <StyledLink to="/day5">
-        <Square title={'Day 5'} img_src={imageDayFive} />
+        <Square title={'Scatterplot + Slider'} date={'Day 5'} img_src={imageDayFive} />
       </StyledLink>
       <StyledLink to="/day6">
-        <Square title={'Day 6'} />
+        <Square title={'Line chart'} date={'Day 6'} img_src={imageDaySix} />
       </StyledLink>
       <StyledLink to="/day7">
-        <Square title={'Day 7'} />
+        <Square title={`Scatterplot + Pan, Zoom`} date={'Day 7'} img_src={imageDaySeven} />
       </StyledLink>
       <StyledLink to="/day8">
-        <Square title={'Day 8'} />
+        <Square title={'Pie Chart'} date={'Day 8'} img_src={imageDayEight} />
       </StyledLink>
       <StyledLink to="/day9">
-        <Square title={'Day 9'} />
+        <Square title={'Scatterplot + Brush'} date={'Day 9'} img_src={imageDayNine} />
       </StyledLink>
       <StyledLink to="/day10">
-        <Square title={'Day 10'} />
+        <Square title={'Scatterplot + Scroll'} date={'Day 10'} img_src={imageDayTen} />
       </StyledLink>
       <StyledLink to="/day11">
-        <Square title={'Day 11'} />
+        <Square title={'Scatterplot * 2 + Brush'} date={'Day 11'} img_src={imageDayEleven} />
       </StyledLink>
       <StyledLink to="/day12">
-        <Square title={'Day 12'} />
+        <Square title={'Tree + Bar chart'} date={'Day 12'} img_src={imageDayTwelve} />
       </StyledLink>
       <StyledLink to="/day13">
-        <Square title={'Day 13'} />
+        <Square title={'Cluster'} date={'Day 13'} img_src={imageDayThirteen} />
       </StyledLink>
       <StyledLink to="/day14">
-        <Square title={'Day 14'} />
+        <Square title={'Cluster + Scatterplot'} date={'Day 14'} img_src={imageDayThirteen} />
       </StyledLink>
       <StyledLink to="/day15">
-        <Square title={'Day 15'} />
+        <Square title={'Radial Tree + Bar chart'} date={'Day 15'} img_src={imageDayFifteen} />
       </StyledLink>
       <StyledLink to="/day16">
-        <Square title={'Day 16'} />
+        <Square date={'Day 16'} />
       </StyledLink>
       <StyledLink to="/day17">
-        <Square title={'Day 17'} />
+        <Square date={'Day 17'} />
       </StyledLink>
       <StyledLink to="/day18">
-        <Square title={'Day 18'} />
+        <Square date={'Day 18'} />
       </StyledLink>
       <StyledLink to="/day19">
-        <Square title={'Day 19'} />
+        <Square date={'Day 19'} />
       </StyledLink>
       <StyledLink to="/day20">
-        <Square title={'Day 20'} />
+        <Square date={'Day 20'} />
       </StyledLink>
       <StyledLink to="/day21">
-        <Square title={'Day 21'} />
+        <Square date={'Day 21'} />
       </StyledLink>
     </StyledMain>
   );

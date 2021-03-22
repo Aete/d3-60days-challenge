@@ -25,6 +25,17 @@ const StyledHeading = styled.h2`
   text-align: center;
 `;
 
+const StyledDate = styled.h3`
+  max-width: 200px;
+  width: 22vw;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #424242;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+`;
+
 const StyledImg = styled.img`
   width: 95%;
   filter: grayscale(100%);
@@ -34,13 +45,14 @@ const StyledImg = styled.img`
   }
 `;
 
-export default function Square({ title, img_src }) {
+export default function Square({ title, date, img_src }) {
   return (
     <Fragment>
       <StyledSquare>
         <StyledImg src={img_src} alt="placeholder" />
       </StyledSquare>
       <StyledHeading>{title}</StyledHeading>
+      <StyledDate>{date}</StyledDate>
     </Fragment>
   );
 }
