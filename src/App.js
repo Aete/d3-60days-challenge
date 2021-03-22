@@ -21,9 +21,14 @@ import DayNineTeen from './Day19/DayNineteen';
 import DayTwenty from './Day20/DayTwenty';
 import { Route } from 'react-router-dom';
 import Home from './Component/Home';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Lato');
+`;
 
 const StyledBody = styled.div`
+  font-family: Lato, sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;

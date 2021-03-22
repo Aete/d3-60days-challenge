@@ -28,13 +28,17 @@ const StyledHeading = styled.h2`
 const StyledImg = styled.img`
   width: 95%;
   filter: grayscale(100%);
+  transition: filter 0.2s ease;
+  &:hover {
+    filter: none;
+  }
 `;
 
 export default function Square({ title, img_src }) {
   return (
     <Fragment>
       <StyledSquare>
-        <StyledImg src="http://placekitten.com/200/200" alt="placeholder" />
+        <StyledImg src={img_src} alt="placeholder" />
       </StyledSquare>
       <StyledHeading>{title}</StyledHeading>
     </Fragment>

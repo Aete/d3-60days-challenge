@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Square from './Square';
+import imageDayOne from '../utils/images/DayOne.png';
+import imageDayTwo from '../utils/images/DayTwo.png';
+import imageDayThree from '../utils/images/DayThree.png';
+import imageDayFour from '../utils/images/DayFour.png';
+import imageDayFive from '../utils/images/DayFive.png';
 
 const StyledMain = styled.main`
   width: 885px;
@@ -19,19 +24,19 @@ export default function Main() {
   return (
     <StyledMain>
       <StyledLink to="/day1">
-        <Square title={'Day 1'} />
+        <Square title={'Day 1'} img_src={imageDayOne} />
       </StyledLink>
       <StyledLink to="/day2">
-        <Square title={'Day 2'} />
+        <Square title={'Day 2'} img_src={imageDayTwo} />
       </StyledLink>
       <StyledLink to="/day3">
-        <Square title={'Day 3'} />
+        <Square title={'Day 3'} img_src={imageDayThree} />
       </StyledLink>
       <StyledLink to="/day4">
-        <Square title={'Day 4'} />
+        <Square title={'Day 4'} img_src={imageDayFour} />
       </StyledLink>
       <StyledLink to="/day5">
-        <Square title={'Day 5'} />
+        <Square title={'Day 5'} img_src={imageDayFive} />
       </StyledLink>
       <StyledLink to="/day6">
         <Square title={'Day 6'} />
