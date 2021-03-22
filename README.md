@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+You can see charts at https://hancodesd3.netlify.app/
+
 - Day 1: Bar Chart Bar chart with COVID-19 data in South Korea
 
 - Day 2: Stacked Bar chart with COVID-19 data in South Korea
@@ -37,3 +39,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Day 17: Circle Packing diagram with GDP data in 2019
 
 - Day 18: Chord Diagram (Copy from https://observablehq.com/@d3/chord-diagram)
+
+- Day 19: Grid Heatmap with Precipitation data
+
+- Day 20 - Radial collapsible tree
+
+- Day 21 - Parallel Coordinates Chart with Population, GDP, and Life Expectancy
