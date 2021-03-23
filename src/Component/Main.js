@@ -16,6 +16,10 @@ import imageDayTwelve from '../utils/images/DayTwelve.png';
 import imageDayThirteen from '../utils/images/DayThirteen.png';
 import imageDayFourteen from '../utils/images/DayThirteen.png';
 import imageDayFifteen from '../utils/images/DayFifteen.png';
+import imageDaySixteen from '../utils/images/DaySixteen.png';
+import imageDaySeventeen from '../utils/images/DaySeventeen.png';
+import imageDayEighteen from '../utils/images/DayEighteen.png';
+import imageDayNineteen from '../utils/images/DayNineteen.png';
 
 const StyledMain = styled.main`
   width: 885px;
@@ -73,22 +77,22 @@ export default function Main() {
         <Square title={'Cluster'} date={'Day 13'} img_src={imageDayThirteen} />
       </StyledLink>
       <StyledLink to="/day14">
-        <Square title={'Cluster + Scatterplot'} date={'Day 14'} img_src={imageDayThirteen} />
+        <Square title={'Cluster + Scatterplot'} date={'Day 14'} img_src={imageDayFourteen} />
       </StyledLink>
       <StyledLink to="/day15">
         <Square title={'Radial Tree + Bar chart'} date={'Day 15'} img_src={imageDayFifteen} />
       </StyledLink>
       <StyledLink to="/day16">
-        <Square date={'Day 16'} />
+        <Square title={'Histogram'} date={'Day 16'} img_src={imageDaySixteen} />
       </StyledLink>
       <StyledLink to="/day17">
-        <Square date={'Day 17'} />
+        <Square title={'Circle Packing'} date={'Day 17'} img_src={imageDaySeventeen} />
       </StyledLink>
       <StyledLink to="/day18">
-        <Square date={'Day 18'} />
+        <Square title={'Chord'} date={'Day 18'} img_src={imageDayEighteen} />
       </StyledLink>
       <StyledLink to="/day19">
-        <Square date={'Day 19'} />
+        <Square title={'Grid Heatmap'} date={'Day 19'} img_src={imageDayNineteen} />
       </StyledLink>
       <StyledLink to="/day20">
         <Square date={'Day 20'} />
