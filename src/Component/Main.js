@@ -20,6 +20,8 @@ import imageDaySixteen from '../utils/images/DaySixteen.png';
 import imageDaySeventeen from '../utils/images/DaySeventeen.png';
 import imageDayEighteen from '../utils/images/DayEighteen.png';
 import imageDayNineteen from '../utils/images/DayNineteen.png';
+import imageDayTwenty from '../utils/images/DayTwenty.png';
+import imageDayTwentyOne from '../utils/images/DayTwentyOne.png';
 
 const StyledMain = styled.main`
   width: 885px;
@@ -95,10 +97,10 @@ export default function Main() {
         <Square title={'Grid Heatmap'} date={'Day 19'} img_src={imageDayNineteen} />
       </StyledLink>
       <StyledLink to="/day20">
-        <Square date={'Day 20'} />
+        <Square title={'Radial Collapsible Tree'} date={'Day 20'} img_src={imageDayTwenty} />
       </StyledLink>
       <StyledLink to="/day21">
-        <Square date={'Day 21'} />
+        <Square title={'Parallel Coordinates Chart'} date={'Day 21'} img_src={imageDayTwentyOne} />
       </StyledLink>
     </StyledMain>
   );
