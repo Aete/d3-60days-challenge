@@ -13,6 +13,7 @@ const StyledSquare = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  visibility: ${(props) => (props.image ? 'visible' : 'hidden')};
 `;
 
 const StyledHeading = styled.h2`
@@ -48,7 +49,7 @@ const StyledImg = styled.img`
 export default function Square({ title, date, img_src }) {
   return (
     <Fragment>
-      <StyledSquare>
+      <StyledSquare image={img_src}>
         <StyledImg src={img_src} alt="placeholder" />
       </StyledSquare>
       <StyledHeading>{title}</StyledHeading>

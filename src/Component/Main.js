@@ -22,6 +22,7 @@ import imageDayEighteen from '../utils/images/DayEighteen.png';
 import imageDayNineteen from '../utils/images/DayNineteen.png';
 import imageDayTwenty from '../utils/images/DayTwenty.png';
 import imageDayTwentyOne from '../utils/images/DayTwentyOne.png';
+import imageDayTwentyTwo from '../utils/images/DayFive.png';
 
 const StyledMain = styled.main`
   width: 885px;
@@ -91,7 +92,7 @@ export default function Main() {
         <Square title={'Circle Packing'} date={'Day 17'} img_src={imageDaySeventeen} />
       </StyledLink>
       <StyledLink to="/day18">
-        <Square title={'Chord'} date={'Day 18'} img_src={imageDayEighteen} />
+        <Square title={'Chord + Hover'} date={'Day 18'} img_src={imageDayEighteen} />
       </StyledLink>
       <StyledLink to="/day19">
         <Square title={'Grid Heatmap'} date={'Day 19'} img_src={imageDayNineteen} />
@@ -102,6 +103,10 @@ export default function Main() {
       <StyledLink to="/day21">
         <Square title={'Parallel Coordinates Chart'} date={'Day 21'} img_src={imageDayTwentyOne} />
       </StyledLink>
+      <StyledLink to="/day22">
+        <Square title={'Scatterplot + responsive(width)'} date={'Day 22'} img_src={imageDayTwentyTwo} />
+      </StyledLink>
+      <Square />
     </StyledMain>
   );
 }
