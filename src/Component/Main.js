@@ -24,6 +24,7 @@ import imageDayNineteen from '../utils/images/DayNineteen.png';
 import imageDayTwenty from '../utils/images/DayTwenty.png';
 import imageDayTwentyOne from '../utils/images/DayTwentyOne.png';
 import imageDayTwentyTwo from '../utils/images/DayFive.png';
+import imageDayTwentyThree from '../utils/images/DayOne.png';
 
 const StyledMain = styled.main`
   width: 885px;
@@ -101,6 +102,9 @@ export default function Main() {
       </StyledLink>
       <StyledLink to="/day22">
         <Square title={'Scatterplot + responsive(width)'} date={'Day 22'} img_src={imageDayTwentyTwo} />
+      </StyledLink>
+      <StyledLink to="/day23">
+        <Square title={'Bar chart + responsive'} date={'Day 23'} img_src={imageDayTwentyThree} />
       </StyledLink>
       <Square />
     </StyledMain>
