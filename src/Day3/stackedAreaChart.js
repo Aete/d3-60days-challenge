@@ -12,16 +12,12 @@ export default function StackedAReaChart(element, data) {
     return current;
   });
 
-  const industries = Object.keys(dataTranspose[0]).filter(
-    (column) => column !== 'year'
-  );
+  const industries = Object.keys(dataTranspose[0]).filter((column) => column !== 'year');
 
   const stackedData = d3.stack().keys(industries)(dataTranspose);
-  const maximum = Math.max(
-    ...stackedData[stackedData.length - 1].map((v) => v[1])
-  );
+  const maximum = Math.max(...stackedData[stackedData.length - 1].map((v) => v[1]));
 
-  const margin = { top: 70, bottom: 50, right: 600, left: 50 };
+  const margin = { top: 20, bottom: 50, right: 600, left: 50 };
   const height = 600 - margin.top - margin.bottom;
   const width = 1200 - margin.left - margin.right;
 
@@ -31,26 +27,19 @@ export default function StackedAReaChart(element, data) {
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
 
-  const container = svg
-    .append('g')
-    .attr('transform', `translate(${margin.left},${margin.top})`);
+  const container = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
-  const xAxis = container
-    .append('g')
-    .attr('transform', `translate(0,${height})`);
+  const xAxis = container.append('g').attr('transform', `translate(0,${height})`);
 
   const xScale = d3.scaleLinear().domain([2009, 2019]).range([0, width]);
-  const xAxisFunction = d3
-    .axisBottom(xScale)
-    .tickSizeOuter(0)
-    .tickFormat(d3.format('d'));
+  const xAxisFunction = d3.axisBottom(xScale).tickSizeOuter(0).tickFormat(d3.format('d'));
 
   xAxis.call(xAxisFunction);
 
   const yAxis = container.append('g');
 
   const yScale = d3.scaleLinear().domain([0, maximum]).range([height, 0]);
-  const yAxisFunction = d3.axisLeft(yScale).tickSizeOuter(0).tickFormat(d3.format(".2s"));
+  const yAxisFunction = d3.axisLeft(yScale).tickSizeOuter(0).tickFormat(d3.format('.2s'));
   yAxis.call(yAxisFunction);
 
   const areaFunction = d3
@@ -91,9 +80,7 @@ export default function StackedAReaChart(element, data) {
     .append('title')
     .text(({ key }) => key);
 
-  const legend = container
-    .append('g')
-    .attr('transform', `translate(${width + 15},0)`);
+  const legend = container.append('g').attr('transform', `translate(${width + 15},0)`);
 
   legend
     .selectAll('rect')
@@ -104,25 +91,16 @@ export default function StackedAReaChart(element, data) {
     .attr('y', (v, i) => 25 * i)
     .attr('width', 10)
     .attr('height', 10)
-    .attr('fill',(v,i)=>colors[i]);
+    .attr('fill', (v, i) => colors[i]);
 
-  legend.selectAll('text')
-  .data(industries)
-  .enter()
-  .append('text')
-  .attr('x', 13)
-  .attr('y', (v, i) => 25 * i + 9)
-  .text(d=>d)
-      .style('font-family', 'sans-serif')
-    .style('font-size', '12px');
-
-  const title = container
+  legend
+    .selectAll('text')
+    .data(industries)
+    .enter()
     .append('text')
-    .attr('class', 'title')
-    .text('Number of employments in Seoul by industries')
-    .attr('text-anchor', 'middle')
-    .attr('x', 0.5 * width)
-    .attr('y', -30)
+    .attr('x', 13)
+    .attr('y', (v, i) => 25 * i + 9)
+    .text((d) => d)
     .style('font-family', 'sans-serif')
-    .style('font-weight', 700);
+    .style('font-size', '12px');
 }

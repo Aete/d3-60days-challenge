@@ -31,7 +31,7 @@ createGlobalStyle`
 `;
 
 const StyledBody = styled.div`
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;

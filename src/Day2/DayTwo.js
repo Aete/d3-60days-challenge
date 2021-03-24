@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import Header from '../Component/Header';
 import StackBarChart from './StackBarChart';
+import { StyledChartTitle } from '../atoms/headings';
 
 export default function DayTwo() {
   const [chart, setChart] = useState(null);
@@ -13,5 +15,11 @@ export default function DayTwo() {
     }
   }, [chart]);
 
-  return <div className="stackBarChart" ref={container}></div>;
+  return (
+    <Fragment>
+      <Header />
+      <StyledChartTitle>Number of Daily COVID-19 cases</StyledChartTitle>
+      <div className="stackBarChart" ref={container}></div>
+    </Fragment>
+  );
 }

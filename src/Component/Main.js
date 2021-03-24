@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Square from './Square';
+import { StyledLink } from '../atoms/link';
 import imageDayOne from '../utils/images/DayOne.png';
 import imageDayTwo from '../utils/images/DayTwo.png';
 import imageDayThree from '../utils/images/DayThree.png';
@@ -30,11 +31,6 @@ const StyledMain = styled.main`
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 0.7rem;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: black;
 `;
 
 export default function Main() {

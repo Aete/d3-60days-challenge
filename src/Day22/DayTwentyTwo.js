@@ -1,4 +1,5 @@
 import { Fragment, useState, useEffect, useRef } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
 import ScatterChart from './ScatterPlot';
 
 export default function DayTwentyTwo() {
@@ -16,16 +17,7 @@ export default function DayTwentyTwo() {
   }, [chart]);
   return (
     <Fragment>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '40px',
-        }}
-      >
-        Scatterplot with the Gapminder dataset (responsive, resize a width of the webpage)
-      </h1>
+      <StyledChartTitle>Scatterplot with the Gapminder dataset (responsive, resize a width of the webpage)</StyledChartTitle>
       <div
         style={{
           width: '100%',

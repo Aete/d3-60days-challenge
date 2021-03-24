@@ -54,7 +54,7 @@ const data = [
 ];
 
 export default function StackBarChart(element) {
-  const margin = { top: 70, bottom: 50, right: 50, left: 50 };
+  const margin = { top: 20, bottom: 50, right: 50, left: 50 };
   const height = 600 - margin.top - margin.bottom;
   const width = 800 - margin.left - margin.right;
 
@@ -67,14 +67,9 @@ export default function StackBarChart(element) {
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
 
-  const container = svg
-    .append('g')
-    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  const container = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-  const xAxis = container
-    .append('g')
-    .attr('id', 'xAxis')
-    .attr('transform', `translate(0,${height})`);
+  const xAxis = container.append('g').attr('id', 'xAxis').attr('transform', `translate(0,${height})`);
 
   const yAxis = container.append('g').attr('id', 'yAxis');
 
@@ -82,9 +77,7 @@ export default function StackBarChart(element) {
 
   const anno = container.append('g');
 
-  const legendContainer = container
-    .append('g')
-    .attr('transform', `translate(${0.5 * width - 70}, 20)`);
+  const legendContainer = container.append('g').attr('transform', `translate(${0.5 * width - 70}, 20)`);
 
   const legend = legendContainer
     .selectAll('g')
@@ -107,27 +100,12 @@ export default function StackBarChart(element) {
     .style('font-family', 'sans-serif')
     .style('font-size', '12px');
 
-  const title = container
-    .append('text')
-    .attr('class', 'title')
-    .text('Number of Daily COVID-19 cases')
-    .attr('text-anchor', 'middle')
-    .attr('x', 0.5 * width)
-    .attr('y', -30)
-    .style('font-family', 'sans-serif')
-    .style('font-weight', 700);
-
   this.update = () => {
     const total = data.map((v) => v.domestic + v.inflow);
     const maximum = Math.max(...total);
     const dates = data.map((v) => v.date);
 
-    const xScale = d3
-      .scaleBand()
-      .domain(dates)
-      .range([0, width])
-      .paddingInner(0.3)
-      .paddingOuter(0.3);
+    const xScale = d3.scaleBand().domain(dates).range([0, width]).paddingInner(0.3).paddingOuter(0.3);
 
     const xAxisFunction = d3.axisBottom(xScale).tickSizeOuter(0);
     xAxis.transition().duration(500).call(xAxisFunction);

@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
 import styled from 'styled-components';
+import { StyledSquareTitle, StyledSquareDate } from '../atoms/headings';
+import { StyledSquareImg } from '../atoms/image';
 
 const StyledSquare = styled.div`
   max-width: 200px;
@@ -16,44 +18,14 @@ const StyledSquare = styled.div`
   visibility: ${(props) => (props.image ? 'visible' : 'hidden')};
 `;
 
-const StyledHeading = styled.h2`
-  max-width: 200px;
-  width: 22vw;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-align: center;
-`;
-
-const StyledDate = styled.h3`
-  max-width: 200px;
-  width: 22vw;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: #424242;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-align: center;
-`;
-
-const StyledImg = styled.img`
-  width: 95%;
-  filter: grayscale(100%);
-  transition: filter 0.2s ease;
-  &:hover {
-    filter: none;
-  }
-`;
-
 export default function Square({ title, date, img_src }) {
   return (
     <Fragment>
       <StyledSquare image={img_src}>
-        <StyledImg src={img_src} alt="placeholder" />
+        <StyledSquareImg src={img_src} alt="placeholder" />
       </StyledSquare>
-      <StyledHeading>{title}</StyledHeading>
-      <StyledDate>{date}</StyledDate>
+      <StyledSquareTitle>{title}</StyledSquareTitle>
+      <StyledSquareDate>{date}</StyledSquareDate>
     </Fragment>
   );
 }
