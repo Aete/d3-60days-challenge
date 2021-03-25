@@ -2,7 +2,6 @@ import Home from './Component/Home';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Route } from 'react-router-dom';
 
-import './App.css';
 import DayOne from './Day1/DayOne';
 import DayTwo from './Day2/DayTwo';
 import DayThree from './Day3/DayThree';
@@ -26,6 +25,7 @@ import DayTwenty from './Day20/DayTwenty';
 import DayTwentyOne from './Day21/DayTwentyOne';
 import DayTwentyTwo from './Day22/DayTwentyTwo';
 import DayTwentyThree from './Day23/DayTwentyThree';
+import DayTwentyFour from './Day24/DayTwentyFour';
 
 createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -67,6 +67,7 @@ function App() {
       <Route path="/day21" component={DayTwentyOne} />
       <Route path="/day22" component={DayTwentyTwo} />
       <Route path="/day23" component={DayTwentyThree} />
+      <Route path="/day24" component={DayTwentyFour} />
     </StyledBody>
   );
 }

@@ -25,6 +25,7 @@ import imageDayTwenty from '../utils/images/DayTwenty.png';
 import imageDayTwentyOne from '../utils/images/DayTwentyOne.png';
 import imageDayTwentyTwo from '../utils/images/DayFive.png';
 import imageDayTwentyThree from '../utils/images/DayOne.png';
+import imageDayTwentyFour from '../utils/images/DayTwentyFour.png';
 
 const StyledMain = styled.main`
   width: 885px;
@@ -106,7 +107,9 @@ export default function Main() {
       <StyledLink to="/day23">
         <Square title={'Bar chart + responsive'} date={'Day 23'} img_src={imageDayTwentyThree} />
       </StyledLink>
-      <Square />
+      <StyledLink to="/day24">
+        <Square title={'Collision Detection'} date={'Day 24'} img_src={imageDayTwentyFour} />
+      </StyledLink>
     </StyledMain>
   );
 }
