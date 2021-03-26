@@ -51,3 +51,5 @@ You can see charts at https://hancodesd3.netlify.app/ (the page is still under c
 - Day 23: Responsive chart with viewBox
 
 - Day 24: Collision Detection (Clone https://observablehq.com/@d3/collision-detection/2 using svg, not canvas)
+
+- Day 25: Github Flower Prototype
