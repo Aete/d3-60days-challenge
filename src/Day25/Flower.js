@@ -33,9 +33,10 @@ export default function Flower(element) {
     CSS: '#FFC107',
   };
 
-  const tooltip = svg.append('rect').attr('width', 80).attr('height', 80).style('opacity', 0).attr('fill', '#fff');
-  const tooltipTextOne = svg.append('text').style('opacity', 0).style('font-size', '14px');
-  const tooltipTextTwo = svg.append('text').style('opacity', 0).style('font-size', '14px');
+  const tooltipContainer = svg.append('g').style('opacity', 0);
+  const tooltip = tooltipContainer.append('rect').attr('width', 140).attr('height', 50).attr('fill', '#fff').style('opacity', 0.8).attr('stroke', '#212121');
+  const tooltipTextOne = tooltipContainer.append('text').style('font-size', '14px').attr('x', 10).attr('y', 20).style('font-weight', 700);
+  const tooltipTextTwo = tooltipContainer.append('text').style('font-size', '14px').attr('x', 10).attr('y', 40);
 
   this.update = () => {
     container
@@ -46,9 +47,19 @@ export default function Flower(element) {
       .attr('x1', 0.5 * width)
       .attr('x2', 0.5 * width)
       .attr('y1', 360)
-      .attr('y2', 720);
+      .attr('y2', 720)
+      .attr('stroke-width', 3)
+      .on('mousemove', function (e, d) {
+        tooltipContainer.style('opacity', 1).attr('transform', `translate(${e.layerX + 20},${e.layerY + 20})`);
+        tooltipTextOne.text(`Commits: ${90}`);
+        tooltipTextTwo.text(`3 Contributers`);
+      })
+      .on('mouseout', function () {
+        tooltipContainer.style('opacity', 0);
+        tooltipContainer.style('pointer-events', 'none');
+      });
 
-    const rScale = d3.scaleSqrt().domain([0, 8861243]).range([10, 40]);
+    const rScale = d3.scaleSqrt().domain([0, 8861243]).range([3, 40]);
     const circles = container.append('g').attr('transform', `translate(${width * 0.5},${360})`);
     const data = Object.entries(capstone.languages);
 
@@ -59,8 +70,14 @@ export default function Flower(element) {
       .append('circle')
       .attr('r', (d) => rScale(d[1]))
       .attr('fill', (d) => colors[d[0]])
-      .on('mouseover', function (e, d) {
-        console.log(e, d);
+      .on('mousemove', function (e, d) {
+        tooltipContainer.style('opacity', 1).attr('transform', `translate(${e.layerX + 20},${e.layerY + 20})`);
+        tooltipTextOne.text(d[0]);
+        tooltipTextTwo.text(d[1].toLocaleString());
+      })
+      .on('mouseout', function () {
+        tooltipContainer.style('opacity', 0);
+        tooltipContainer.style('pointer-events', 'none');
       });
 
     const simulation = d3
