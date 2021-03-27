@@ -27,6 +27,7 @@ import DayTwentyTwo from './Day22/DayTwentyTwo';
 import DayTwentyThree from './Day23/DayTwentyThree';
 import DayTwentyFour from './Day24/DayTwentyFour';
 import DayTwentyFive from './Day25/DayTwentyFive';
+import DayTwentySix from './Day26/DayTwentySix';
 
 createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Lato');
@@ -70,6 +71,7 @@ function App() {
       <Route path="/day23" component={DayTwentyThree} />
       <Route path="/day24" component={DayTwentyFour} />
       <Route path="/day25" component={DayTwentyFive} />
+      <Route path="/day26" component={DayTwentySix} />
     </StyledBody>
   );
 }
