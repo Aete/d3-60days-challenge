@@ -1,6 +1,14 @@
 import Slider from '@material-ui/core/Slider';
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import ScatterChart from './ScatterChart';
+
+const StyledSlider = styled(Slider)`
+  max-width: 1000px;
+  margin: 0 10px;
+`;
 
 export default function DayFive() {
   const [year, setYear] = useState(1960);
@@ -16,21 +24,10 @@ export default function DayFive() {
   }, [chart, year]);
 
   return (
-    <div
-      className="scatterChartAnimation"
-      style={{ maxWidth: '1000px', width: '1000px' }}
-    >
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '40px',
-        }}
-      >
-        Scatter Chart with Gapminder dataset
-      </h1>
-      <Slider
+    <Fragment>
+      <Header />
+      <StyledChartTitle>Scatter Chart with Gapminder dataset</StyledChartTitle>
+      <StyledSlider
         defaultValue={1960}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
@@ -45,6 +42,6 @@ export default function DayFive() {
         }}
       />
       <div className="scatterChart" ref={container}></div>
-    </div>
+    </Fragment>
   );
 }

@@ -13,28 +13,13 @@ export default function ScatterChart(element) {
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
 
-  const container = svg
-    .append('g')
-    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  const container = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-  const xAxis = container
-    .append('g')
-    .attr('class', 'xAxis')
-    .attr('transform', `translate(0,${height})`);
+  const xAxis = container.append('g').attr('class', 'xAxis').attr('transform', `translate(0,${height})`);
 
   const yAxis = container.append('g').attr('class', 'yAxis');
 
   const dots = container.append('g').attr('class', 'dots');
-
-  const title = container
-    .append('text')
-    .attr('class', 'title')
-    .text('GDP vs Life Expectancy')
-    .attr('text-anchor', 'middle')
-    .attr('x', 0.5 * width)
-    .attr('y', -30)
-    .style('font-family', 'sans-serif')
-    .style('font-weight', 700);
 
   const xAxisTitle = container
     .append('text')

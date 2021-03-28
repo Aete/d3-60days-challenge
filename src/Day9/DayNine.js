@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import ScatterChart from './ScatterChart';
 
 export default function DayNine() {
@@ -9,5 +11,12 @@ export default function DayNine() {
       setChart(new ScatterChart(container.current));
     }
   }, []);
-  return <div className="ScatterChart" ref={container}></div>;
+
+  return (
+    <Fragment>
+      <Header />
+      <StyledChartTitle>GDP vs Life Expectancy</StyledChartTitle>
+      <div className="ScatterChart" ref={container}></div>
+    </Fragment>
+  );
 }

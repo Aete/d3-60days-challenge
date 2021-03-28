@@ -56,7 +56,7 @@ const data = [
 export default function LineChart(element) {
   const processedData = data.map((d) => {
     const date = d3.timeParse('%Y-%m-%d')(d.date);
-    d.date = date;
+    d.processDate = date;
     return d;
   });
 
@@ -66,10 +66,7 @@ export default function LineChart(element) {
 
   const colors = ['#ff5252', '#448Aff'];
   const category = ['domestic', 'inflow'];
-  const maximum = Math.max(
-    Math.max(...data.map((d) => d.domestic)),
-    Math.max(...data.map((d) => d.inflow))
-  );
+  const maximum = Math.max(Math.max(...data.map((d) => d.domestic)), Math.max(...data.map((d) => d.inflow)));
 
   const svg = d3
     .select(element)
@@ -77,26 +74,19 @@ export default function LineChart(element) {
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
 
-  const container = svg
-    .append('g')
-    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+  const container = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
 
   const xScale = d3
     .scaleTime()
     .domain(
       d3.extent(processedData, function (d) {
-        return d.date;
+        return d.processDate;
       })
     )
     .range([0, width]);
 
-  const xAxis = container
-    .append('g')
-    .attr('transform', `translate(0,${height})`);
-  const xAxisFunction = d3
-    .axisBottom(xScale)
-    .tickFormat(d3.timeFormat('%b. %d'))
-    .tickSizeOuter(0);
+  const xAxis = container.append('g').attr('transform', `translate(0,${height})`);
+  const xAxisFunction = d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b. %d')).tickSizeOuter(0);
   xAxis.call(xAxisFunction);
 
   const yScale = d3.scaleLinear().domain([0, maximum]).range([height, 0]);
@@ -115,7 +105,7 @@ export default function LineChart(element) {
       'd',
       d3
         .line()
-        .x((d) => xScale(d.date))
+        .x((d) => xScale(d.processDate))
         .y((d) => yScale(d.inflow))
     );
 
@@ -130,13 +120,11 @@ export default function LineChart(element) {
       'd',
       d3
         .line()
-        .x((d) => xScale(d.date))
+        .x((d) => xScale(d.processDate))
         .y((d) => yScale(d.domestic))
     );
 
-  const legendContainer = container
-    .append('g')
-    .attr('transform', `translate(${0.5 * width - 70}, 20)`);
+  const legendContainer = container.append('g').attr('transform', `translate(${0.5 * width - 70}, 20)`);
 
   const legend = legendContainer
     .selectAll('g')
@@ -158,14 +146,4 @@ export default function LineChart(element) {
     .attr('y', 10)
     .style('font-family', 'sans-serif')
     .style('font-size', '12px');
-
-  container
-    .append('text')
-    .attr('class', 'title')
-    .text('Number of Daily COVID-19 cases')
-    .attr('text-anchor', 'middle')
-    .attr('x', 0.5 * width)
-    .attr('y', -30)
-    .style('font-family', 'sans-serif')
-    .style('font-weight', 700);
 }
