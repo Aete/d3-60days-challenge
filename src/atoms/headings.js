@@ -12,25 +12,24 @@ export const StyledPageTitle = styled.h1`
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   margin-bottom: 20px;
+  margin-left: 10px;
 `;
 
 export const StyledSquareTitle = styled.h3`
   max-width: 200px;
   width: 22vw;
-  font-size: 0.8rem;
+  font-size: 15px;
   font-weight: 600;
-  margin-top: 5px;
-  margin-bottom: 5px;
   text-align: center;
+  margin: 5px auto;
 `;
 
 export const StyledSquareDate = styled.h3`
   max-width: 200px;
   width: 22vw;
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 400;
   color: #424242;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px auto;
   text-align: center;
 `;

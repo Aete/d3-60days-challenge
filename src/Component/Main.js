@@ -28,14 +28,18 @@ import imageDayTwentyThree from '../utils/images/DayOne.png';
 import imageDayTwentyFour from '../utils/images/DayTwentyFour.png';
 import imageDayTwentyFive from '../utils/images/DayTwentyFive.png';
 import imageDayTwentySix from '../utils/images/DayTwentySix.png';
+import { StyledSquareDate } from '../atoms/headings';
 
 const StyledMain = styled.main`
-  width: 885px;
+  max-width: 885px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 0 0.7rem;
 `;
+
+const Placeholder = styled.div``;
 
 export default function Main() {
   return (
@@ -118,8 +122,12 @@ export default function Main() {
       <StyledLink to="/day26">
         <Square title={'Github Flower Prototype2'} date={'Day 26'} img_src={imageDayTwentySix} />
       </StyledLink>
-      <Square />
-      <Square />
+      <Placeholder>
+        <Square />
+      </Placeholder>
+      <Placeholder>
+        <Square />
+      </Placeholder>
     </StyledMain>
   );
 }

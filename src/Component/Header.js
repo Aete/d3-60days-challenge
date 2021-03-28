@@ -4,7 +4,8 @@ import { StyledPageTitle } from '../atoms/headings';
 import { StyledLink } from '../atoms/link';
 
 const StyledHeader = styled.header`
-  width: 885px;
+  max-width: 885px;
+  width: 100%;
   display: flex;
 `;
 
