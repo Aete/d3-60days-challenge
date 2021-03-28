@@ -1,5 +1,7 @@
 # d3-60days-challenge
 
+My D3.js practice. 1 Day 1 Chart. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 You can see charts at https://hancodesd3.netlify.app/ (the page is still under construction)
