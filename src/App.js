@@ -46,7 +46,7 @@ const StyledBody = styled.div`
 function App() {
   return (
     <StyledBody>
-      <Route path="/" component={DayTwentySeven} exact />
+      <Route path="/" component={Home} exact />
       <Route path="/day1" component={DayOne} />
       <Route path="/day2" component={DayTwo} />
       <Route path="/day3" component={DayThree} />
