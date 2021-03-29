@@ -1,5 +1,7 @@
 # d3-60days-challenge
 
+My D3.js practice. 1 Day 1 Chart. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 You can see charts at https://hancodesd3.netlify.app/ (the page is still under construction)
@@ -53,3 +55,5 @@ You can see charts at https://hancodesd3.netlify.app/ (the page is still under c
 - Day 24: Collision Detection (Clone https://observablehq.com/@d3/collision-detection/2 using svg, not canvas)
 
 - Day 25: Github Flower Prototype
+
+- Day 26: Github Flower Prototype 2
