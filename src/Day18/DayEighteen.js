@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import Chord from './Chord';
 
 export default function DayEighteen() {
@@ -8,16 +10,8 @@ export default function DayEighteen() {
   }, []);
   return (
     <Fragment>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '0',
-        }}
-      >
-        Chord Diagram
-      </h1>
+      <Header />
+      <StyledChartTitle>Chord Diagram</StyledChartTitle>
       <div ref={container}></div>
     </Fragment>
   );

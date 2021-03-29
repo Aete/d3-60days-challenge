@@ -59,16 +59,6 @@ export default function ScatterChartOne(element, countryFilter) {
     .style('font-weight', 700)
     .style('font-size', '12px');
 
-  const title = container
-    .append('text')
-    .attr('class', 'title')
-    .text('GDP vs Life Expectancy')
-    .attr('text-anchor', 'middle')
-    .attr('x', 0.5 * width)
-    .attr('y', -30)
-    .style('font-family', 'sans-serif')
-    .style('font-weight', 700);
-
   d3.csv(csvData).then((csv) => {
     for (let i = 1960; i <= 2019; i++) {
       data[i - 1960] = csv.filter((d) => +d.year === i);

@@ -21,6 +21,7 @@ export default function DayTen() {
     const yearGap = 2019 - 1960;
     setYear(1960 + Math.floor((yearGap * percent) / 100));
   });
+  
   return (
     <div style={{ height: '6000px' }}>
       <div

@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import RadialTree from './RadialTree';
 
 export default function DayTwenty() {
@@ -13,16 +15,8 @@ export default function DayTwenty() {
 
   return (
     <Fragment>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '40px',
-        }}
-      >
-        Radial Collapsible Tree (Click Circles!)
-      </h1>
+      <Header />
+      <StyledChartTitle>Radial Collapsible Tree (Click Circles!)</StyledChartTitle>
       <div ref={container}></div>
     </Fragment>
   );

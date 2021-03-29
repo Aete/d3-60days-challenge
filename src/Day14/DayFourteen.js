@@ -1,5 +1,10 @@
-import { Fragment, Fregment, useEffect, useState, useRef, useCallback } from 'react';
+import { Fragment, useEffect, useState, useRef } from 'react';
+import styled from 'styled-components';
+import { StyledChartTitle } from '../atoms/headings';
 import ClusterScatter from './ClusterScatter';
+import Header from '../Component/Header';
+
+const ButtonContainer = styled.div``;
 
 export default function DayFourTeen() {
   const [chart, setChart] = useState(null);
@@ -18,24 +23,18 @@ export default function DayFourTeen() {
   };
 
   return (
-    <div>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '40px',
-        }}
-      >
-        Clustering Animation
-      </h1>
-      <button className="cluster" onClick={moveNodes} ref={clusterBtn}>
-        Clustering
-      </button>
-      <button className="scatter" onClick={moveNodes}>
-        Scatter Chart
-      </button>
+    <Fragment>
+      <Header />
+      <StyledChartTitle>Clustering Animation</StyledChartTitle>
+      <ButtonContainer>
+        <button className="cluster" onClick={moveNodes} ref={clusterBtn}>
+          Clustering
+        </button>
+        <button className="scatter" onClick={moveNodes}>
+          Scatter Chart
+        </button>
+      </ButtonContainer>
       <div ref={container}></div>
-    </div>
+    </Fragment>
   );
 }

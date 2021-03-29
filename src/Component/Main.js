@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import Square from './Square';
 import { StyledLink } from '../atoms/link';
 import imageDayOne from '../utils/images/DayOne.png';
@@ -28,7 +27,6 @@ import imageDayTwentyThree from '../utils/images/DayOne.png';
 import imageDayTwentyFour from '../utils/images/DayTwentyFour.png';
 import imageDayTwentyFive from '../utils/images/DayTwentyFive.png';
 import imageDayTwentySix from '../utils/images/DayTwentySix.png';
-import { StyledSquareDate } from '../atoms/headings';
 
 const StyledMain = styled.main`
   max-width: 885px;

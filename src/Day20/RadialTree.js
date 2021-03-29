@@ -3,7 +3,7 @@ import csvData from '../utils/data/gapminder.csv';
 
 export default function RadialTree(element) {
   const margin = { top: 0, bottom: 50, right: 50, left: 50 };
-  const height = 1000 - margin.top - margin.bottom;
+  const height = 975 - margin.top - margin.bottom;
   const width = 1000 - margin.left - margin.right;
   const continents = ['Europe', 'Africa', 'Americas', 'Oceania', 'Asia'];
 
@@ -18,7 +18,7 @@ export default function RadialTree(element) {
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom);
 
-  const container = svg.append('g').attr('transform', `translate(${margin.left + width / 2}, ${margin.top + height / 2})`);
+  const container = svg.append('g').attr('transform', `translate(${margin.left + width / 2}, ${margin.top + height / 2 - 50})`);
 
   const colors = {
     Asia: '#F44336',
@@ -126,7 +126,7 @@ export default function RadialTree(element) {
     const root = d3.hierarchy(data);
     return d3
       .tree()
-      .size([2 * Math.PI, (width * 0.9) / 2])
+      .size([2 * Math.PI, (width * 0.7) / 2])
       .separation((a, b) => {
         if (a.parent.data.name === 'Global') {
           return (a.parent.data.name === b.parent.data.name ? 1 : 2) / a.depth;

@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 import csvData from '../utils/data/gapminder.csv';
 
 export default function ClusterScatter(element) {
-  const margin = { top: 0, bottom: 50, right: 50, left: 50 };
+  const margin = { top: -150, bottom: 50, right: 50, left: 50 };
   const height = 500 - margin.top - margin.bottom;
   const width = 1000 - margin.left - margin.right;
 
@@ -13,7 +13,6 @@ export default function ClusterScatter(element) {
     .attr('height', height + margin.top + margin.bottom);
 
   const container = svg.append('g').attr('transform', `translate(${margin.left}, ${margin.top})`);
-  const padding = 5;
 
   const colors = {
     Asia: '#F44336',
@@ -35,16 +34,6 @@ export default function ClusterScatter(element) {
 
   let data = [];
 
-  const title = container
-    .append('text')
-    .attr('class', 'title')
-    .text('GDP per Continent')
-    .attr('text-anchor', 'middle')
-    .attr('x', 0.5 * width)
-    .attr('y', 50)
-    .style('font-family', 'sans-serif')
-    .style('font-weight', 700);
-
   const label = container
     .append('g')
     .attr('class', 'label')
@@ -53,7 +42,7 @@ export default function ClusterScatter(element) {
     .enter()
     .append('text')
     .attr('x', (d) => xCenter[d])
-    .attr('y', 430)
+    .attr('y', 500)
     .text((d) => d)
     .attr('text-anchor', 'middle')
     .style('font-family', 'sans-serif')

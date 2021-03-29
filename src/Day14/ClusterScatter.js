@@ -2,9 +2,9 @@ import * as d3 from 'd3';
 import csvData from '../utils/data/gapminder.csv';
 
 export default function ClusterScatter(element, clusterBtn) {
-  const margin = { top: 50, bottom: 50, right: 50, left: 50 };
-  const height = 800 - margin.top - margin.bottom;
-  const width = 1000 - margin.left - margin.right;
+  const margin = { top: 10, bottom: 50, right: 50, left: 50 };
+  const height = 600 - margin.top - margin.bottom;
+  const width = 800 - margin.left - margin.right;
 
   const svg = d3
     .select(element)
@@ -35,10 +35,10 @@ export default function ClusterScatter(element, clusterBtn) {
 
   const xCenter = {
     Asia: 50,
-    Americas: 250,
-    Oceania: 450,
-    Europe: 650,
-    Africa: 850,
+    Americas: 200,
+    Oceania: 350,
+    Europe: 500,
+    Africa: 650,
   };
 
   let data = [];
@@ -51,7 +51,7 @@ export default function ClusterScatter(element, clusterBtn) {
     .enter()
     .append('text')
     .attr('x', (d) => xCenter[d])
-    .attr('y', 0.5 * height + 100)
+    .attr('y', 0.5 * height + 130)
     .text((d) => d)
     .attr('text-anchor', 'middle')
     .style('font-family', 'sans-serif')
@@ -82,16 +82,19 @@ export default function ClusterScatter(element, clusterBtn) {
       .force('charge', d3.forceManyBody().strength(5))
       .force(
         'x',
-        d3.forceX().x((d) => {
-          return xCenter[d.continent];
-        })
+        d3
+          .forceX()
+          .x((d) => {
+            return xCenter[d.continent];
+          })
+          .strength(0.2)
       )
       .force(
         'y',
         d3
           .forceY()
           .y((d) => {
-            return 0.5 * height;
+            return 0.5 * height - 100;
           })
           .strength(0.01)
       )

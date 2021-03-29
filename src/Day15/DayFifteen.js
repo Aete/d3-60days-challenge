@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
 import RadialTree from './RadialTree';
+import Header from '../Component/Header';
 
 export default function DayFifteen() {
   const [chart, setChart] = useState(null);
@@ -13,16 +15,8 @@ export default function DayFifteen() {
 
   return (
     <Fragment>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '40px',
-        }}
-      >
-        Radial Tree (GDP per capita)
-      </h1>
+      <Header />
+      <StyledChartTitle>Radial Tree (GDP per capita)</StyledChartTitle>
       <div ref={container}></div>
     </Fragment>
   );

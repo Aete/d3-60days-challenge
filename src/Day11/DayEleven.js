@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
+import Header from '../Component/Header';
+import { StyledChartTitle } from '../atoms/headings';
 import ScatterChartOne from './ScatterChartOne';
 import ScatterChartTwo from './ScatterChartTwo';
 
@@ -24,7 +26,7 @@ export default function DayEleven() {
 
   useEffect(() => {
     if (!chartTwo) {
-      setChartTwo(new ScatterChartTwo(containerOne.current, countryFilter));
+      setChartTwo(new ScatterChartTwo(containerTwo.current, countryFilter));
     } else {
       chartTwo.update(2019, selectedCountry);
     }
@@ -32,6 +34,8 @@ export default function DayEleven() {
 
   return (
     <Fragment>
+      <Header />
+      <StyledChartTitle>Brush Multiple Charts</StyledChartTitle>
       <div ref={containerOne}></div>
       <div ref={containerTwo}></div>
     </Fragment>

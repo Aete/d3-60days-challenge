@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import BarChart from './BarChart';
 import styled from 'styled-components';
 
@@ -25,6 +26,7 @@ export default function DayTwentyThree() {
   }, [chart]);
   return (
     <Fragment>
+      <Header />
       <StyledChartTitle>Bar chart + viewbox</StyledChartTitle>
       <StyledChartContainer ref={container}></StyledChartContainer>;
     </Fragment>

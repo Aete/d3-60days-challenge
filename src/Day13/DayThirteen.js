@@ -1,5 +1,7 @@
-import { useEffect, useState, useRef } from 'react';
+import { Fragment, useEffect, useState, useRef } from 'react';
 import ClusterScatter from './ClusterScatter';
+import Header from '../Component/Header';
+import { StyledChartTitle } from '../atoms/headings';
 
 export default function DayThirteen() {
   const [chart, setChart] = useState(null);
@@ -10,5 +12,11 @@ export default function DayThirteen() {
       setChart(new ClusterScatter(container.current));
     }
   }, [chart]);
-  return <div ref={container}></div>;
+  return (
+    <Fragment>
+      <Header />
+      <StyledChartTitle>GDP per Continent</StyledChartTitle>
+      <div ref={container}></div>
+    </Fragment>
+  );
 }

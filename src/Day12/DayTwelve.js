@@ -1,4 +1,7 @@
+import { Fragment } from 'react';
 import { useEffect, useRef, useState } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import Tree from './Tree';
 
 export default function DayTwelve() {
@@ -11,5 +14,11 @@ export default function DayTwelve() {
       chart.update();
     }
   }, [chart]);
-  return <div ref={container}></div>;
+  return (
+    <Fragment>
+      <Header />
+      <StyledChartTitle>GDP per Continent</StyledChartTitle>
+      <div ref={container}></div>
+    </Fragment>
+  );
 }

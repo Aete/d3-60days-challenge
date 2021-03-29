@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import GridHeatmap from './GridHeatmap';
 
 export default function DayNineTeen() {
@@ -8,16 +10,8 @@ export default function DayNineTeen() {
   }, []);
   return (
     <Fragment>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '0',
-        }}
-      >
-        Grid Heatmap (Precipitation, Busan, 2020.07 ~ 2020.12)
-      </h1>
+      <Header />
+      <StyledChartTitle>Grid Heatmap (Precipitation, Busan, 2020.07 ~ 2020.12)</StyledChartTitle>
       <div ref={container}></div>
     </Fragment>
   );

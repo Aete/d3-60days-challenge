@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import parallel from './parallel';
 
 export default function DayTwentyOne() {
@@ -9,16 +11,8 @@ export default function DayTwentyOne() {
 
   return (
     <Fragment>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '40px',
-        }}
-      >
-        Parallel Coordinates Chart
-      </h1>
+      <Header />
+      <StyledChartTitle>Parallel Coordinates Chart</StyledChartTitle>
       <div ref={container}></div>
     </Fragment>
   );

@@ -1,4 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
+import { StyledChartTitle } from '../atoms/headings';
+import Header from '../Component/Header';
 import CirclePacking from './CirclePacking';
 
 export default function DaySeventeen() {
@@ -9,16 +11,8 @@ export default function DaySeventeen() {
 
   return (
     <Fragment>
-      <h1
-        style={{
-          fontSize: '16px',
-          fontFamily: 'sans-serif',
-          fontWeight: 700,
-          marginBottom: '0',
-        }}
-      >
-        Circle Packing diagram of GDP
-      </h1>
+      <Header />
+      <StyledChartTitle>Circle Packing diagram of GDP</StyledChartTitle>
       <div ref={container}></div>
     </Fragment>
   );

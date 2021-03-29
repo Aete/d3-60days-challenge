@@ -30,8 +30,8 @@ export default function Tree(element) {
     this.update();
   });
 
-  const margin = { top: 500, bottom: 50, right: 50, left: 50 };
-  const height = 1000 - margin.top - margin.bottom;
+  const margin = { top: 350, bottom: 50, right: 50, left: 50 };
+  const height = 750 - margin.top - margin.bottom;
   const width = 1000 - margin.left - margin.right;
 
   const svg = d3
@@ -59,16 +59,6 @@ export default function Tree(element) {
   for (let i = 1; i <= 10; i++) {
     xGrid.push(10000 * i);
   }
-
-  const title = container
-    .append('text')
-    .attr('class', 'title')
-    .text('GDP per Continent')
-    .attr('text-anchor', 'middle')
-    .attr('x', 0.5 * width)
-    .attr('y', -380)
-    .style('font-family', 'sans-serif')
-    .style('font-weight', 700);
 
   this.update = () => {
     if (data.children[0].children.length === 0) {
