@@ -27,11 +27,35 @@ export default function DayTwentySix() {
     const getData = async () => {
       const response = await fetch(`https://api.github.com/users/aete/repos?sort=created`, {
         method: 'GET',
+        headers: {
+          Authorization: `add token`,
+        },
       });
       const data = await response.json();
-      console.log(data);
+      const processedData = await Promise.all(
+        data.map(async (repo) => {
+          const languageRes = await fetch(repo.languages_url, {
+            method: 'GET',
+            headers: {
+              Authorization: `add token`,
+            },
+          });
+          const languages = await languageRes.json();
+          const contributerRes = await fetch(repo.contributors_url, {
+            method: 'GET',
+            headers: {
+              Authorization: `add token`,
+            },
+          });
+          const contributers = await contributerRes.json();
+          const commits = contributers.reduce((acc, curr) => acc + curr.contributions, 0);
+          return { ...languages, commits, contributors: contributers.length };
+        })
+      );
+      console.log(processedData);
+      return processedData;
     };
-    getData();
+    console.log(getData());
   }, []);
 
   return (
