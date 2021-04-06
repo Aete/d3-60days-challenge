@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.js": "/static/js/main.ae3459ef.chunk.js",
+    "main.js.map": "/static/js/main.ae3459ef.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e7970790.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e7970790.js.map",
+    "static/js/2.acc81c4c.chunk.js": "/static/js/2.acc81c4c.chunk.js",
+    "static/js/2.acc81c4c.chunk.js.map": "/static/js/2.acc81c4c.chunk.js.map",
+    "static/js/3.9f84af32.chunk.js": "/static/js/3.9f84af32.chunk.js",
+    "static/js/3.9f84af32.chunk.js.map": "/static/js/3.9f84af32.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.acc81c4c.chunk.js.LICENSE.txt": "/static/js/2.acc81c4c.chunk.js.LICENSE.txt",
+    "static/media/DayEight.a6263403.png": "/static/media/DayEight.a6263403.png",
+    "static/media/DayEighteen.97613077.png": "/static/media/DayEighteen.97613077.png",
+    "static/media/DayEleven.0f615c83.png": "/static/media/DayEleven.0f615c83.png",
+    "static/media/DayFifteen.1106f254.png": "/static/media/DayFifteen.1106f254.png",
+    "static/media/DayFive.0c07d632.png": "/static/media/DayFive.0c07d632.png",
+    "static/media/DayFour.744e1bf1.png": "/static/media/DayFour.744e1bf1.png",
+    "static/media/DaySeventeen.28e1d99c.png": "/static/media/DaySeventeen.28e1d99c.png",
+    "static/media/DaySix.e745d28a.png": "/static/media/DaySix.e745d28a.png",
+    "static/media/DayThirteen.1cab12b2.png": "/static/media/DayThirteen.1cab12b2.png",
+    "static/media/DayThree.e6241b65.png": "/static/media/DayThree.e6241b65.png",
+    "static/media/DayTwelve.51e5d03e.png": "/static/media/DayTwelve.51e5d03e.png",
+    "static/media/DayTwenty.e45a71a8.png": "/static/media/DayTwenty.e45a71a8.png",
+    "static/media/DayTwentyFive.e731513a.png": "/static/media/DayTwentyFive.e731513a.png",
+    "static/media/DayTwentyFour.a8831ff1.png": "/static/media/DayTwentyFour.a8831ff1.png",
+    "static/media/DayTwentyOne.f6b53b05.png": "/static/media/DayTwentyOne.f6b53b05.png",
+    "static/media/DayTwentySeven.a68f3b5c.png": "/static/media/DayTwentySeven.a68f3b5c.png",
+    "static/media/DayTwentySix.c57a3f11.png": "/static/media/DayTwentySix.c57a3f11.png",
+    "static/media/gapminder.7f3b962a.csv": "/static/media/gapminder.7f3b962a.csv",
+    "static/media/gdppercapita_us_inflation_adjusted_2019.87e47354.csv": "/static/media/gdppercapita_us_inflation_adjusted_2019.87e47354.csv",
+    "static/media/life_expectancy_years_2019.6d6e55d3.csv": "/static/media/life_expectancy_years_2019.6d6e55d3.csv",
+    "static/media/seoulEmploymentByIndustry.db7a1a72.csv": "/static/media/seoulEmploymentByIndustry.db7a1a72.csv"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e7970790.js",
+    "static/js/2.acc81c4c.chunk.js",
+    "static/js/main.ae3459ef.chunk.js"
+  ]
+}
