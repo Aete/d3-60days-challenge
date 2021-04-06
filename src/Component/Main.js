@@ -27,6 +27,7 @@ import imageDayTwentyThree from '../utils/images/DayOne.png';
 import imageDayTwentyFour from '../utils/images/DayTwentyFour.png';
 import imageDayTwentyFive from '../utils/images/DayTwentyFive.png';
 import imageDayTwentySix from '../utils/images/DayTwentySix.png';
+import imageDayTwentySeven from '../utils/images/DayTwentySeven.png';
 
 const StyledMain = styled.main`
   max-width: 885px;
@@ -120,9 +121,9 @@ export default function Main() {
       <StyledLink to="/day26">
         <Square title={'Github Flower Prototype2'} date={'Day 26'} img_src={imageDayTwentySix} />
       </StyledLink>
-      <Placeholder>
-        <Square />
-      </Placeholder>
+      <StyledLink to="/day27">
+        <Square title={'Github Flower Garden'} date={'Day 27'} img_src={imageDayTwentySeven} />
+      </StyledLink>
       <Placeholder>
         <Square />
       </Placeholder>
