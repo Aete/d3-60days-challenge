@@ -28,6 +28,7 @@ import imageDayTwentyFour from '../utils/images/DayTwentyFour.png';
 import imageDayTwentyFive from '../utils/images/DayTwentyFive.png';
 import imageDayTwentySix from '../utils/images/DayTwentySix.png';
 import imageDayTwentySeven from '../utils/images/DayTwentySeven.png';
+import imageDayTwentyEight from '../utils/images/DayTwentyEight.png';
 
 const StyledMain = styled.main`
   max-width: 885px;
@@ -38,7 +39,7 @@ const StyledMain = styled.main`
   padding: 0 0.7rem;
 `;
 
-const Placeholder = styled.div``;
+// const Placeholder = styled.div``;
 
 export default function Main() {
   return (
@@ -124,9 +125,9 @@ export default function Main() {
       <StyledLink to="/day27">
         <Square title={'Github Flower Garden'} date={'Day 27'} img_src={imageDayTwentySeven} />
       </StyledLink>
-      <Placeholder>
-        <Square />
-      </Placeholder>
+      <StyledLink to="/day28">
+        <Square title={'Github Flower Garden2 (Disk)'} date={'Day 27'} img_src={imageDayTwentyEight} />
+      </StyledLink>
     </StyledMain>
   );
 }
